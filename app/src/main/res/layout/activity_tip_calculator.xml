@@ -7,7 +7,7 @@
     tools:context=".TipCalculator">
 
     <EditText
-        android:id="@+id/totalBill"
+        android:id="@+id/FarenheitText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -48,17 +48,18 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/people_paying"
-        app:layout_constraintBottom_toTopOf="@+id/Calculate"
+        app:layout_constraintBottom_toTopOf="@+id/Conversion"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline11" />
 
     <Button
-        android:id="@+id/Calculate"
+        android:id="@+id/Conversion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:onClick="onClick"
         android:text="@string/calculate"
         app:layout_constraintBottom_toTopOf="@+id/Clear"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
@@ -112,6 +113,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="72dp"
+        android:onClick="onClick"
         android:text="Clear"
         app:layout_constraintBottom_toTopOf="@+id/Message"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"

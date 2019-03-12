@@ -29,7 +29,7 @@ public class TipCalculator extends AppCompatActivity {
 
 
     private void calculateEachPerson(){
-        EditText totalText = findViewById(R.id.totalBill);
+        EditText totalText = findViewById(R.id.FarenheitText);
         EditText percentText = findViewById(R.id.tipPercentage);
         EditText peopleText = findViewById(R.id.numberOfPeople);
         TextView message = findViewById(R.id.Message);
@@ -52,7 +52,7 @@ public class TipCalculator extends AppCompatActivity {
     }
 
     private void clear(){
-        EditText totalText = findViewById(R.id.totalBill);
+        EditText totalText = findViewById(R.id.FarenheitText);
         EditText percentText = findViewById(R.id.tipPercentage);
         EditText peopleText = findViewById(R.id.numberOfPeople);
         TextView message = findViewById(R.id.Message);
