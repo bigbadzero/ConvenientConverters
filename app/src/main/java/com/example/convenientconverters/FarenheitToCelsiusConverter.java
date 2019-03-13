@@ -1,11 +1,9 @@
 package com.example.convenientconverters;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 
 public class FarenheitToCelsiusConverter extends AppCompatActivity {
@@ -19,7 +17,7 @@ public class FarenheitToCelsiusConverter extends AppCompatActivity {
 
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.Conversion:
+            case R.id.Calculate:
                 convertDegrees();
                 break;
             case R.id.Clear:
@@ -31,11 +29,11 @@ public class FarenheitToCelsiusConverter extends AppCompatActivity {
 
 
     private void convertDegrees(){
-        EditText farenheitText = findViewById(R.id.FarenheitText);
-        EditText celsiusText = findViewById(R.id.CelsiusText);
+        EditText farenheitText = findViewById(R.id.fText);
+        EditText celsiusText = findViewById(R.id.cText);
         if(!farenheitText.getText().toString().matches("")){
             Double farenheit = Double.parseDouble(farenheitText.getText().toString());
-            Double celsius = (farenheit - 32) * (5/9);
+            Double celsius = (farenheit - 32) * 5/9;
 
             celsiusText.setText(String.format("%.2f", celsius));
         }
@@ -48,8 +46,8 @@ public class FarenheitToCelsiusConverter extends AppCompatActivity {
     }
 
     private void clear(){
-        EditText farenheitText = findViewById(R.id.FarenheitText);
-        EditText celsiusText = findViewById(R.id.CelsiusText);
+        EditText farenheitText = findViewById(R.id.fText);
+        EditText celsiusText = findViewById(R.id.cText);
         farenheitText.setText("");
         celsiusText.setText("");
     }

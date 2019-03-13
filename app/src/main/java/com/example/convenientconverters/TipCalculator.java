@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class TipCalculator extends AppCompatActivity {
 
     @Override
@@ -16,20 +17,11 @@ public class TipCalculator extends AppCompatActivity {
     }
 
 
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.ConversionButton:
-                calculateEachPerson();
-                break;
-            case R.id.Clear:
-                clear();
-                break;
-        }
-    }
+
 
 
     private void calculateEachPerson(){
-        EditText totalText = findViewById(R.id.FarenheitText);
+        EditText totalText = findViewById(R.id.TotalBillText);
         EditText percentText = findViewById(R.id.tipPercentage);
         EditText peopleText = findViewById(R.id.numberOfPeople);
         TextView message = findViewById(R.id.Message);
@@ -39,6 +31,11 @@ public class TipCalculator extends AppCompatActivity {
             Double tip = calculateTip(Double.parseDouble(percentText.getText().toString()), bill);
             Double people = Double.parseDouble(peopleText.getText().toString());
             Double eachPerson = (bill / people) + (tip / people);
+
+            message.setText(String.format("Each person pays %.2f each.", eachPerson));
+        }
+        else{
+            message.setText("Make sure to enter all three fields");
         }
     }
 
@@ -52,7 +49,7 @@ public class TipCalculator extends AppCompatActivity {
     }
 
     private void clear(){
-        EditText totalText = findViewById(R.id.FarenheitText);
+        EditText totalText = findViewById(R.id.TotalBillText);
         EditText percentText = findViewById(R.id.tipPercentage);
         EditText peopleText = findViewById(R.id.numberOfPeople);
         TextView message = findViewById(R.id.Message);
@@ -61,6 +58,16 @@ public class TipCalculator extends AppCompatActivity {
         percentText.setText("");
         peopleText.setText("");
         message.setText("");
+    }
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.Calculate:
+                calculateEachPerson();
+                break;
+            case R.id.Clear:
+                clear();
+                break;
+        }
     }
 
 
