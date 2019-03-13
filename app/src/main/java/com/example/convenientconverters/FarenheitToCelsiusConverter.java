@@ -41,7 +41,7 @@ public class FarenheitToCelsiusConverter extends AppCompatActivity {
         }
         else if(!celsiusText.getText().toString().matches("")){
             Double celsius = Double.parseDouble(celsiusText.getText().toString());
-            double farenheit = ((celsius * 1.8) + 32);
+            Double farenheit = ((celsius * 1.8) + 32);
 
             farenheitText.setText(String.format("%.2f", farenheit));
         }
