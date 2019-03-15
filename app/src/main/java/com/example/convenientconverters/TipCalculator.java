@@ -32,7 +32,7 @@ public class TipCalculator extends AppCompatActivity {
             Double people = Double.parseDouble(peopleText.getText().toString());
             Double eachPerson = (bill / people) + (tip / people);
 
-            message.setText(String.format("Each person pays %.2f each.", eachPerson));
+            message.setText(String.format("Each person pays $%.2f each.", eachPerson));
         }
         else{
             message.setText("Make sure to enter all three fields");
